@@ -19,6 +19,12 @@ class Vector:
         x = self.x + other.x
         y = self.y + other.y
         return Vector(x, y)
-
+    # allows multiplication of 1 vector against a scaler value - v1 * 3
     def __mul__(self, scalar):
         return Vector(self.x * scalar, self.y * scalar)
+    # allows multiplication of 2 vectors - v1*v2
+    # def __mul__(self, v):
+    #     return Vector(self.x * v.x, self.y * v.y)
+
+    def __eq__(self, other):
+        return self.x == other.x and self.y == other.y
