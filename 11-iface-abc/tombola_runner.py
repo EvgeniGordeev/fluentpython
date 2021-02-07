@@ -12,6 +12,8 @@ TEST_MSG = '{0:16} {1.attempted:2} tests, {1.failed:2} failed - {2}'
 def main(argv):
     verbose = '-v' in argv
     real_subclasses = Tombola.__subclasses__()  # <2>
+    # https://github.com/python/typing/issues/721
+    # pip install typing doesn't work in py 3.8+
     virtual_subclasses = list(Tombola._abc_registry)  # <3>
 
     for cls in real_subclasses + virtual_subclasses:  # <4>

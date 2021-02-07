@@ -103,4 +103,6 @@ if __name__ == '__main__':
     print(f"Method Resolution Order={TomboList.__mro__}")
 
     # subprocess.check_call("python -m doctest tombola_runner.py".split(), shell=True)
-    os.system("python -m doctest tombola_runner.py")
+    # os.system("python tombola_runner.py")
+
+    # more examples on https://pymotw.com/2/abc/index.html#why-use-abstract-base-classes
