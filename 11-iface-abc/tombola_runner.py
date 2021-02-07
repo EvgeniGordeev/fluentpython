@@ -4,7 +4,6 @@ import doctest
 from tombola import Tombola
 
 # modules to test
-import bingo, lotto, tombolist, drum  # <1>
 
 TEST_FILE = 'tombola_tests.rst'
 TEST_MSG = '{0:16} {1.attempted:2} tests, {1.failed:2} failed - {2}'
@@ -20,17 +19,17 @@ def main(argv):
 
 
 def test(cls, verbose=False):
-
     res = doctest.testfile(
-            TEST_FILE,
-            globs={'ConcreteTombola': cls},  # <5>
-            verbose=verbose,
-            optionflags=doctest.REPORT_ONLY_FIRST_FAILURE)
+        TEST_FILE,
+        globs={'ConcreteTombola': cls},  # <5>
+        verbose=verbose,
+        optionflags=doctest.REPORT_ONLY_FIRST_FAILURE)
     tag = 'FAIL' if res.failed else 'OK'
     print(TEST_MSG.format(cls.__name__, res, tag))  # <6>
 
 
 if __name__ == '__main__':
     import sys
+    print(f"Running {__file__}")
     main(sys.argv)
 # END TOMBOLA_RUNNER
